@@ -1,0 +1,52 @@
+# Snake Game
+
+Clone of [playsnake](https://playsnake.org) using React and Typescript
+
+<details>
+ <summary>References</summary>
+
+- [Keycode](https://keycode.info)
+- [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/)
+- [.ts vs .tsx](https://stackoverflow.com/questions/56871384/what-is-the-difference-between-ts-and-tsx-extensions-both-are-used-as-extensi)
+- [ES6 import from root](https://stackoverflow.com/questions/29755065/es6-import-from-root)
+- [What does 'declare' do in 'export declare class'](https://stackoverflow.com/questions/35019987/what-does-declare-do-in-export-declare-class-actions)
+- [Specify (optional) default props with TypeScript](https://stackoverflow.com/questions/40209352/how-to-specify-optional-default-props-with-typescript-for-stateless-functiona)
+- [No restricted globals](https://stackoverflow.com/questions/44991656/no-restricted-globals)
+- [Property 'innerText' does not exist on type 'EventTarget'](https://stackoverflow.com/questions/54886637/error-property-innertext-does-not-exist-on-type-eventtarget)
+- [Use SVG in styled-components](https://www.pinkdroids.com/blog/svg-react-styled-components/)
+- [Use SVG in React](https://blog.logrocket.com/how-to-use-svgs-in-react/)
+- [Unable to import svg files in typescript](https://stackoverflow.com/a/61839578)
+- [Autocomplete and IntelliSense for styled-components](https://stackoverflow.com/questions/57736419/vscode-autocomplete-and-intellisense-are-not-working-within-backticks)
+- [Adding Animations with Styled Components](https://styled-components.com/docs/basics#animations)
+- [Passing props with styled-components](https://stackoverflow.com/questions/52321539/react-passing-props-with-styled-components)
+- [Provide props to styled elements in Typescript](https://github.com/styled-components/styled-components/issues/630)
+- [Use attrs vs passing props directly with styled-components](https://stackoverflow.com/questions/60079950/when-do-i-use-attrs-vs-passing-props-directly-with-styled-components)
+- [Styled Components Transient props](https://stackoverflow.com/questions/49834251/how-to-extend-styled-component-without-passing-props-to-underlying-dom-element)
+- [Introducing “transient” props](https://medium.com/@probablyup/introducing-transient-props-f35fd5203e0c)
+- [for loops in styled-components](https://stackoverflow.com/questions/52696511/for-loops-in-styled-components)
+- [Over 200 classes were generated for component styled.div. Consider using the `attrs` method](https://spectrum.chat/styled-components/general/cant-solve-over-200-classes-were-generated-for-component-styled-div-consider-using-the-attrs-method-together-with-a-style-object-for-frequently-changed-styles-warning-help~8d01cd1c-e55b-42d2-8377-dd355bfa4a8a)
+- [styled-components not applying style to custom functional react component](https://stackoverflow.com/questions/52542817/styled-components-not-applying-style-to-custom-functional-react-component)
+- [StyledComponents with Typescript and ThemeProvider. What are the right types?](https://stackoverflow.com/questions/63029643/styledcomponents-with-typescript-and-themeprovider-what-are-the-right-types)
+- [How to use media queries with styled components](https://jsramblings.com/how-to-use-media-queries-with-styled-components/)
+- [Use the Animation Inspector in Chrome DevTools](https://webdesign.tutsplus.com/articles/quick-tip-chrome-animation-dev-tools--cms-31505)
+- [How to Play and Pause CSS Animations with CSS Custom Properties](https://css-tricks.com/how-to-play-and-pause-css-animations-with-css-custom-properties/)
+- [Activate hover on covered element](https://stackoverflow.com/questions/9738984/css-hover-passes-through-elements-to-activate-hover-on-covered-element/9739105)
+- [Add fonts to create-react-app based projects](https://stackoverflow.com/questions/41676054/how-to-add-fonts-to-create-react-app-based-projects)
+- [Object is possibly 'undefined'?](https://stackoverflow.com/questions/54884488/how-can-i-solve-the-error-ts2532-object-is-possibly-undefined)
+- [Nested Destructuring](https://davidwalsh.name/nested-destructuring)
+- [How to Use the Web Share API](https://css-tricks.com/how-to-use-the-web-share-api/)
+- [How to Vertically Center Text with CSS](https://www.w3docs.com/snippets/css/how-to-vertically-center-text-with-css.html#example-of-vertically-aligning-a-text-4)
+- [Javascript one liner range array](https://stackoverflow.com/questions/26385061/javascript-one-liner-range-array)
+- [How to extend an existing JavaScript array with another array, without creating a new array](https://stackoverflow.com/questions/1374126/how-to-extend-an-existing-javascript-array-with-another-array-without-creating)
+- [Storybook - Decorators - “Context” for mocking](https://storybook.js.org/docs/react/writing-stories/decorators#context-for-mocking)
+- [State not updating when using React state hook within setInterval](https://stackoverflow.com/questions/53024496/state-not-updating-when-using-react-state-hook-within-setinterval)
+- [How to detect Esc Key Press in React and how to handle it](https://stackoverflow.com/questions/37440408/how-to-detect-esc-key-press-in-react-and-how-to-handle-it)
+- [React hooks: accessing up-to-date state from within a callback](https://stackoverflow.com/questions/57847594/react-hooks-accessing-up-to-date-state-from-within-a-callback)
+- [How to play an mp3 file in ReactJS](https://www.cluemediator.com/how-to-play-an-mp3-file-in-reactjs)
+- [How to import a sound file into react typescript component?](https://stackoverflow.com/questions/59247861/how-to-import-a-sound-file-into-react-typescript-component)
+- [React swipe event handler hook](https://github.com/FormidableLabs/react-swipeable)
+- [Swipe effect in react js](https://stackoverflow.com/questions/40463173/swipe-effect-in-react-js)
+- ["TypeError: MiniCssExtractPlugin is not a constructor" in fresh CRA installation](https://github.com/facebook/create-react-app/issues/11930)
+- [Building for Relative Paths](https://create-react-app.dev/docs/deployment/#building-for-relative-paths)
+
+</details>

@@ -1,0 +1,10 @@
+/* storybook 独立于 react 项目，需单独设置 */
+@import url('index.css');
+
+.row-elements {
+  display: flex;
+}
+
+.row-elements > * {
+  margin: 8px;
+}
