@@ -1,6 +1,6 @@
 # Snake Game
 
-Clone of [playsnake](https://playsnake.org) using React and Typescript
+Clone of [playsnake](https://playsnake.org) using React and TypeScript
 
 <details>
  <summary>References</summary>
