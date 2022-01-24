@@ -105,12 +105,14 @@ const StyledAppearFood = styled(StyledStaticFood).attrs<{
     ${spin} 3.5s cubic-bezier(0.2, 0.6, 0.4, 1) 200ms;
 `;
 
-const StyledSnake = styled.div.attrs<{ $opacity: string }>(({ $opacity }) => ({
-  style: {
-    opacity: $opacity,
-  },
-}))<{ $opacity: string }>`
-  background-color: ${({ theme }) => theme.accentColor};
+const StyledSnake = styled.div.attrs<{ $opacity: string }>(
+  ({ $opacity, theme }) => ({
+    style: {
+      opacity: $opacity,
+      backgroundColor: theme.accentColor,
+    },
+  })
+)<{ $opacity: string }>`
   border-radius: 8px;
 `;
 

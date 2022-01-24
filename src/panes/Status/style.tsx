@@ -8,7 +8,13 @@ const displayMixin = (display: boolean) => css`
 `;
 */
 
-const StyledShareButton = styled.p<{ $stopped: boolean }>`
+const StyledShareButton = styled.p.attrs<{ $stopped: boolean }>(
+  ({ $stopped }) => ({
+    style: {
+      visibility: $stopped ? '' : 'hidden',
+    },
+  })
+)<{ $stopped: boolean }>`
   cursor: pointer;
   width: 145px;
   margin-left: 34px;
@@ -16,8 +22,6 @@ const StyledShareButton = styled.p<{ $stopped: boolean }>`
   :hover {
     ${({ theme }) => invertColor(theme)}
   }
-
-  visibility: ${({ $stopped }) => ($stopped ? '' : 'hidden')};
 `;
 
 const StyledStatus = styled.div`

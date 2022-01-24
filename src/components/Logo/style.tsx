@@ -47,12 +47,14 @@ const StyledDisk = styled.span<TransientSvgProps>`
   }
 `;
 
-const StyledLogo = styled(LogoSvg)`
+const StyledLogo = styled(LogoSvg).attrs(({ fill }) => ({
+  style: { borderColor: fill },
+}))`
   position: absolute;
   z-index: 100;
   pointer-events: none;
   box-sizing: content-box;
-  border: 2px solid ${({ fill }) => fill};
+  border: 2px solid;
   border-radius: 50%;
 
   @media (max-width: 940px), (max-height: 530px) {

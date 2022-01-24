@@ -4,13 +4,17 @@ const StyledGame = styled.div`
   width: 597px;
 `;
 
-const MainWrapper = styled.div<{ $clickable: boolean }>`
+const MainWrapper = styled.div.attrs<{ $clickable: boolean }>(
+  ({ $clickable }) => ({
+    style: {
+      cursor: $clickable ? 'pointer' : '',
+      pointerEvents: $clickable ? '' : 'none',
+    },
+  })
+)<{ $clickable: boolean }>`
   position: relative;
   height: 422px;
   border: 4px solid rgb(39, 47, 23);
-
-  cursor: ${({ $clickable }) => ($clickable ? 'pointer' : '')};
-  pointer-events: ${({ $clickable }) => ($clickable ? '' : 'none')};
 
   > * {
     position: absolute;

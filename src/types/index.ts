@@ -21,6 +21,12 @@ export const defaultSvgProps: SvgProps = {
   viewBox: '0 0 512 512',
 };
 
+export const DefaultTheme = {
+  primaryColor: 'rgba(0, 0, 0, 0.75)',
+  secondaryColor: '#9bba5a',
+  accentColor: 'rgb(0, 0, 0)',
+};
+
 export enum GameLevel {
   Slug = 'SlUG',
   Worm = 'WORM',
@@ -66,8 +72,9 @@ export enum KeyCode {
   Down = 40,
 }
 
-export const DefaultTheme = {
-  primaryColor: 'rgba(0, 0, 0, 0.75)',
-  secondaryColor: '#9bba5a',
-  accentColor: 'rgb(0, 0, 0)',
+export const Direction = {
+  left: { x: 0, y: -1 },
+  right: { x: 0, y: 1 },
+  up: { x: -1, y: 0 },
+  down: { x: 1, y: 0 },
 };

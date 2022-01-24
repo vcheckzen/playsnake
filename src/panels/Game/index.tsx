@@ -15,6 +15,7 @@ import {
   GameLevel,
   GameTitle,
   KeyCode,
+  Direction,
 } from 'types';
 import StyledGame, { MainWrapper, StatusWrapper } from './style';
 import Title from 'components/Title';
@@ -25,6 +26,7 @@ import { useSwipeable } from 'react-swipeable';
 interface GameProps extends BoardProps, GameConfig {
   mute: boolean;
 }
+
 interface Coordinate {
   x: number;
   y: number;
@@ -93,7 +95,7 @@ const Game = ({
     await sleep(0.5);
 
     const initSnake = [53, 32, 11];
-    setDirection({ x: 1, y: 0 });
+    setDirection(Direction.down);
     setSnake(initSnake);
     generateFood(initSnake);
     setGameState(GameState.Playing);
@@ -140,8 +142,9 @@ const Game = ({
       lst = snake.length;
       Sound(mute)?.high.play();
       setScore(score + foodScore);
+    } else if (foodScore > 5) {
+      setFoodScore((s) => s - 5);
     }
-    if (foodScore > 5) setFoodScore((s) => s - 5);
 
     const tail = snake.slice(0, lst);
     preventSelfEaten(head, tail);
@@ -187,46 +190,26 @@ const Game = ({
         changeState();
         break;
       case KeyCode.Left:
-        setDirection((d) => {
-          return { x: 0, y: d.y !== 0 ? d.y : -1 };
-        });
-        break;
-      case KeyCode.Up:
-        setDirection((d) => {
-          return { x: d.x !== 0 ? d.x : -1, y: 0 };
-        });
+        setDirection((d) => (d.y !== 0 ? d : Direction.left));
         break;
       case KeyCode.Right:
-        setDirection((d) => {
-          return { x: 0, y: d.y !== 0 ? d.y : 1 };
-        });
+        setDirection((d) => (d.y !== 0 ? d : Direction.right));
+        break;
+      case KeyCode.Up:
+        setDirection((d) => (d.x !== 0 ? d : Direction.up));
         break;
       case KeyCode.Down:
-        setDirection((d) => {
-          return { x: d.x !== 0 ? d.x : 1, y: 0 };
-        });
+        setDirection((d) => (d.x !== 0 ? d : Direction.down));
         break;
     }
   }, []);
 
   // Listen to touch event
   const { ref } = useSwipeable({
-    onSwipedLeft: () =>
-      setDirection((d) => {
-        return { x: 0, y: d.y !== 0 ? d.y : -1 };
-      }),
-    onSwipedUp: () =>
-      setDirection((d) => {
-        return { x: d.x !== 0 ? d.x : -1, y: 0 };
-      }),
-    onSwipedRight: () =>
-      setDirection((d) => {
-        return { x: 0, y: d.y !== 0 ? d.y : 1 };
-      }),
-    onSwipedDown: () =>
-      setDirection((d) => {
-        return { x: d.x !== 0 ? d.x : 1, y: 0 };
-      }),
+    onSwipedLeft: () => pressFunction({ keyCode: KeyCode.Left }),
+    onSwipedRight: () => pressFunction({ keyCode: KeyCode.Right }),
+    onSwipedUp: () => pressFunction({ keyCode: KeyCode.Up }),
+    onSwipedDown: () => pressFunction({ keyCode: KeyCode.Down }),
   }) as { ref: RefCallback<Document> };
 
   useEffect(() => {
@@ -237,18 +220,18 @@ const Game = ({
 
   // Play die sound and save best score on game over
   useEffect(() => {
-    if (gameState === GameState.End) {
-      Sound(mute)?.die.play();
-      saveBestScore();
-    }
+    if (gameState !== GameState.End) return;
+
+    Sound(mute)?.die.play();
+    saveBestScore();
   }, [gameState]);
 
   // Timer
   useEffect(() => {
-    const interval = [400, 200, 100][Object.values(GameLevel).indexOf(level)];
-    const timer = window.setInterval(() => {
-      setTime((prevTime) => prevTime + 1);
-    }, interval);
+    const timer = window.setInterval(
+      () => setTime((prevTime) => prevTime + 1),
+      [400, 200, 100][Object.values(GameLevel).indexOf(level)]
+    );
     return () => clearInterval(timer);
   }, [level]);
 
@@ -258,12 +241,10 @@ const Game = ({
     if (snakeLocked || gameState !== GameState.Playing) return;
     setSnakeLocked(true);
 
-    const waitSnake = async () => {
+    (async () => {
       await generateSnake(snake, food, direction);
       setSnakeLocked(false);
-    };
-
-    waitSnake();
+    })();
   }, [time]);
 
   return (
