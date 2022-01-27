@@ -116,7 +116,7 @@ const Game = ({
   const generateFood = async (snake: number[]) => {
     let newFood;
     do {
-      newFood = Math.floor(Math.random() * cellCount);
+      newFood = Math.floor(Math.random() * cellCount) + 1;
     } while (snake.includes(newFood));
     setFood([newFood]);
     setFoodScore(100);
